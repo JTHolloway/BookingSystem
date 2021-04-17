@@ -117,6 +117,8 @@ public class MainMenu extends javax.swing.JFrame {
         CateringPanel = new javax.swing.JPanel();
         ProfilePanel = new javax.swing.JPanel();
         SchedulePanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ViewBookings = new javax.swing.JTable();
         LoginPanel = new javax.swing.JPanel();
         jSeparator1 = new javax.swing.JSeparator();
         LoginLabel1 = new javax.swing.JLabel();
@@ -125,12 +127,12 @@ public class MainMenu extends javax.swing.JFrame {
         LoginLabel7 = new javax.swing.JLabel();
         LoginLabel8 = new javax.swing.JLabel();
         LoginLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
+        GuestFName = new javax.swing.JTextField();
+        GuestSName = new javax.swing.JTextField();
+        GuestEmail = new javax.swing.JTextField();
         PasswordFeild = new javax.swing.JPasswordField();
         MainLoginButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        ContinueAsGuestButton = new javax.swing.JButton();
         LoginLabel19 = new javax.swing.JLabel();
         LoginLabel20 = new javax.swing.JLabel();
         LoginLabel21 = new javax.swing.JLabel();
@@ -139,20 +141,20 @@ public class MainMenu extends javax.swing.JFrame {
         LoginLabel22 = new javax.swing.JLabel();
         LoginLabel23 = new javax.swing.JLabel();
         LoginLabel10 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        CreateFName = new javax.swing.JTextField();
+        CreateSName = new javax.swing.JTextField();
         LoginLabel11 = new javax.swing.JLabel();
         LoginLabel12 = new javax.swing.JLabel();
         LoginLabel13 = new javax.swing.JLabel();
         LoginLabel14 = new javax.swing.JLabel();
         LoginLabel15 = new javax.swing.JLabel();
-        jPasswordField3 = new javax.swing.JPasswordField();
-        jTextField17 = new javax.swing.JTextField();
-        jPasswordField4 = new javax.swing.JPasswordField();
-        jPasswordField5 = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        CreateSalary = new javax.swing.JPasswordField();
+        CreateCompany = new javax.swing.JTextField();
+        CreatePassword = new javax.swing.JPasswordField();
+        CreateConfirmPassword = new javax.swing.JPasswordField();
+        CreateDept = new javax.swing.JComboBox<>();
+        CreateUserButton = new javax.swing.JButton();
+        CreateEmail = new javax.swing.JTextField();
         SettingsPanel = new javax.swing.JPanel();
         DragPanel = new javax.swing.JPanel();
         PanelState = new javax.swing.JPanel();
@@ -665,7 +667,7 @@ public class MainMenu extends javax.swing.JFrame {
         HomeSettingsButton.setLayout(HomeSettingsButtonLayout);
         HomeSettingsButtonLayout.setHorizontalGroup(
             HomeSettingsButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
+            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         HomeSettingsButtonLayout.setVerticalGroup(
             HomeSettingsButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -700,7 +702,7 @@ public class MainMenu extends javax.swing.JFrame {
         HomeLogOutButtonLayout.setVerticalGroup(
             HomeLogOutButtonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HomeLogOutButtonLayout.createSequentialGroup()
-                .addGap(0, 71, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(Schedule1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -714,14 +716,14 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(HomeBookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HomeScheduleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(80, 80, 80)
-                .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HomeCateringButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HomeSettingsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(HomeCateringButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HomeSettingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(78, 78, 78)
                 .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(HomeProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HomeLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         HomePanelLayout.setVerticalGroup(
             HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -731,11 +733,11 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(HomeCateringButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HomeBookingButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(HomeProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(HomeSettingsButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HomeScheduleButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(HomeLogOutButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addGroup(HomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(HomeSettingsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HomeScheduleButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HomeLogOutButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(55, 55, 55))
         );
 
@@ -1024,6 +1026,11 @@ public class MainMenu extends javax.swing.JFrame {
 
         StartTimeBox.setBackground(new java.awt.Color(211, 84, 0));
         StartTimeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30","16:00", "16:30"}));
+        StartTimeBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartTimeBoxActionPerformed(evt);
+            }
+        });
 
         EndTimeBox.setBackground(new java.awt.Color(211, 84, 0));
         EndTimeBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {"07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30","16:00", "16:30", "17:00"}));
@@ -1250,15 +1257,62 @@ public class MainMenu extends javax.swing.JFrame {
 
         SchedulePanel.setBackground(new java.awt.Color(1, 50, 67));
 
+        ViewBookings.setBackground(new java.awt.Color(211, 84, 0));
+        ViewBookings.setForeground(new java.awt.Color(255, 255, 255));
+        ViewBookings.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Time", "User", "Room No."
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ViewBookings.setGridColor(new java.awt.Color(1, 50, 67));
+        ViewBookings.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(ViewBookings);
+        if (ViewBookings.getColumnModel().getColumnCount() > 0) {
+            ViewBookings.getColumnModel().getColumn(0).setResizable(false);
+            ViewBookings.getColumnModel().getColumn(1).setResizable(false);
+            ViewBookings.getColumnModel().getColumn(2).setResizable(false);
+        }
+
         javax.swing.GroupLayout SchedulePanelLayout = new javax.swing.GroupLayout(SchedulePanel);
         SchedulePanel.setLayout(SchedulePanelLayout);
         SchedulePanelLayout.setHorizontalGroup(
             SchedulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 856, Short.MAX_VALUE)
+            .addGap(0, 862, Short.MAX_VALUE)
+            .addGroup(SchedulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SchedulePanelLayout.createSequentialGroup()
+                    .addGap(39, 39, 39)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 735, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(88, Short.MAX_VALUE)))
         );
         SchedulePanelLayout.setVerticalGroup(
             SchedulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 580, Short.MAX_VALUE)
+            .addGroup(SchedulePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(SchedulePanelLayout.createSequentialGroup()
+                    .addGap(15, 15, 15)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 549, Short.MAX_VALUE)
+                    .addGap(16, 16, 16)))
         );
 
         MainTabPanel.addTab("", SchedulePanel);
@@ -1306,11 +1360,11 @@ public class MainMenu extends javax.swing.JFrame {
         LoginLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LoginLabel9.setText("Create Account");
 
-        jTextField4.setBackground(new java.awt.Color(186, 67, 0));
+        GuestFName.setBackground(new java.awt.Color(186, 67, 0));
 
-        jTextField5.setBackground(new java.awt.Color(186, 67, 0));
+        GuestSName.setBackground(new java.awt.Color(186, 67, 0));
 
-        jTextField6.setBackground(new java.awt.Color(186, 67, 0));
+        GuestEmail.setBackground(new java.awt.Color(186, 67, 0));
 
         PasswordFeild.setBackground(new java.awt.Color(186, 67, 0));
 
@@ -1323,9 +1377,14 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(52, 73, 94));
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("Continue");
+        ContinueAsGuestButton.setBackground(new java.awt.Color(52, 73, 94));
+        ContinueAsGuestButton.setForeground(new java.awt.Color(255, 255, 255));
+        ContinueAsGuestButton.setText("Continue");
+        ContinueAsGuestButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ContinueAsGuestButtonActionPerformed(evt);
+            }
+        });
 
         LoginLabel19.setBackground(new java.awt.Color(211, 84, 0));
         LoginLabel19.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -1367,11 +1426,9 @@ public class MainMenu extends javax.swing.JFrame {
         LoginLabel10.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LoginLabel10.setText("Email Address");
 
-        jTextField14.setBackground(new java.awt.Color(186, 67, 0));
+        CreateFName.setBackground(new java.awt.Color(186, 67, 0));
 
-        jTextField15.setBackground(new java.awt.Color(186, 67, 0));
-
-        jPasswordField2.setBackground(new java.awt.Color(186, 67, 0));
+        CreateSName.setBackground(new java.awt.Color(186, 67, 0));
 
         LoginLabel11.setBackground(new java.awt.Color(211, 84, 0));
         LoginLabel11.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -1403,20 +1460,27 @@ public class MainMenu extends javax.swing.JFrame {
         LoginLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LoginLabel15.setText("Confirm Password");
 
-        jPasswordField3.setBackground(new java.awt.Color(186, 67, 0));
+        CreateSalary.setBackground(new java.awt.Color(186, 67, 0));
 
-        jTextField17.setBackground(new java.awt.Color(186, 67, 0));
+        CreateCompany.setBackground(new java.awt.Color(186, 67, 0));
 
-        jPasswordField4.setBackground(new java.awt.Color(186, 67, 0));
+        CreatePassword.setBackground(new java.awt.Color(186, 67, 0));
 
-        jPasswordField5.setBackground(new java.awt.Color(186, 67, 0));
+        CreateConfirmPassword.setBackground(new java.awt.Color(186, 67, 0));
 
-        jComboBox1.setBackground(new java.awt.Color(186, 67, 0));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        CreateDept.setBackground(new java.awt.Color(186, 67, 0));
+        CreateDept.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Staff", "Admin", "Cleaning", "Reception", "Catering", "Deliveries" }));
 
-        jButton3.setBackground(new java.awt.Color(52, 73, 94));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("Create");
+        CreateUserButton.setBackground(new java.awt.Color(52, 73, 94));
+        CreateUserButton.setForeground(new java.awt.Color(255, 255, 255));
+        CreateUserButton.setText("Create");
+        CreateUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreateUserButtonActionPerformed(evt);
+            }
+        });
+
+        CreateEmail.setBackground(new java.awt.Color(186, 67, 0));
 
         javax.swing.GroupLayout LoginPanelLayout = new javax.swing.GroupLayout(LoginPanel);
         LoginPanel.setLayout(LoginPanelLayout);
@@ -1434,17 +1498,17 @@ public class MainMenu extends javax.swing.JFrame {
                                             .addGroup(LoginPanelLayout.createSequentialGroup()
                                                 .addComponent(LoginLabel7)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(GuestSName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(LoginPanelLayout.createSequentialGroup()
                                                 .addComponent(LoginLabel6)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(GuestFName, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(LoginPanelLayout.createSequentialGroup()
                                                 .addComponent(LoginLabel21)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                    .addComponent(ContinueAsGuestButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(GuestEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGap(24, 24, 24))
                                     .addComponent(LoginLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
@@ -1492,15 +1556,15 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addComponent(LoginLabel15)))
                         .addGap(21, 21, 21)
                         .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPasswordField4)
-                            .addComponent(jPasswordField3)
-                            .addComponent(jComboBox1, 0, 208, Short.MAX_VALUE)
-                            .addComponent(jTextField17)
-                            .addComponent(jPasswordField2)
-                            .addComponent(jTextField15)
-                            .addComponent(jTextField14)
-                            .addComponent(jPasswordField5)))
+                            .addComponent(CreateUserButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CreatePassword)
+                            .addComponent(CreateSalary)
+                            .addComponent(CreateDept, 0, 208, Short.MAX_VALUE)
+                            .addComponent(CreateCompany)
+                            .addComponent(CreateSName)
+                            .addComponent(CreateFName)
+                            .addComponent(CreateConfirmPassword)
+                            .addComponent(CreateEmail)))
                     .addGroup(LoginPanelLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(LoginLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -1537,11 +1601,11 @@ public class MainMenu extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(LoginLabel10)))
                             .addGroup(LoginPanelLayout.createSequentialGroup()
-                                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CreateFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(CreateSName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(CreateEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(LoginPanelLayout.createSequentialGroup()
@@ -1551,17 +1615,17 @@ public class MainMenu extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(LoginLabel6)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(GuestFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(LoginLabel7)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(GuestSName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GuestEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LoginLabel21))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2))
+                                .addComponent(ContinueAsGuestButton))
                             .addGroup(LoginPanelLayout.createSequentialGroup()
                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(LoginPanelLayout.createSequentialGroup()
@@ -1569,27 +1633,27 @@ public class MainMenu extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(LoginLabel12))
                                     .addGroup(LoginPanelLayout.createSequentialGroup()
-                                        .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CreateCompany, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(CreateDept, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(25, 25, 25)
                                         .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jPasswordField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CreateSalary, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(LoginLabel13))
                                         .addGap(18, 18, 18)
                                         .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(jPasswordField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(CreatePassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(LoginLabel14))))
                                 .addGap(18, 18, 18)
                                 .addGroup(LoginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jPasswordField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CreateConfirmPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(LoginLabel15))
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton3))))
+                                .addComponent(CreateUserButton))))
                     .addGroup(LoginPanelLayout.createSequentialGroup()
                         .addGap(32, 32, 32)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 485, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         MainTabPanel.addTab("", LoginPanel);
@@ -1753,7 +1817,7 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         getContentPane().add(MainPanel);
-        MainPanel.setBounds(0, 0, 1162, 630);
+        MainPanel.setBounds(0, 0, 1175, 630);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1795,6 +1859,7 @@ public class MainMenu extends javax.swing.JFrame {
         if (UsersHandling.getCurrentUser() == null) {
             JOptionPane.showMessageDialog(this, "Please Log in");
         } else {
+            UpdateViewScheduleTableData();
             CurrentPanelText.setText("Schedule");
             MainTabPanel.setSelectedIndex(4);
         }
@@ -1948,22 +2013,22 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteBookingButtonMouseClicked
 
     private void MainLoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MainLoginButtonActionPerformed
-          if (((UserIDField.getText().isEmpty()) || (EmailField.getText().isEmpty()) || String.valueOf(PasswordFeild.getPassword()).isEmpty())) {
+        if (((UserIDField.getText().isEmpty()) || (EmailField.getText().isEmpty()) || String.valueOf(PasswordFeild.getPassword()).isEmpty())) {
             JOptionPane.showMessageDialog(this, "Fill in all fields");
         } else {
             if (UsersHandling.ConfirmUser(Integer.parseInt(UserIDField.getText()), EmailField.getText(), String.valueOf(PasswordFeild.getPassword()))) {
+                try {
+                    UsersHandling.setCurrentUser(UsersHandling.ReturnUser(Integer.parseInt(UserIDField.getText())));
+                    UsersHandling.SaveUserAccessLevel();
+                    CurrentUserText.setText("User: " + UsersHandling.getCurrentUser().getFirstName() + " " + UsersHandling.getCurrentUser().getSurname());
+                    StatusText.setText("Status: Online");
 
-                UsersHandling.setCurrentUser(UsersHandling.ReturnUser(Integer.parseInt(UserIDField.getText())));
-                UsersHandling.SaveUserAccessLevel();
-                CurrentUserText.setText("User: " + UsersHandling.getCurrentUser().getFirstName() + " " + UsersHandling.getCurrentUser().getSurname());
-                StatusText.setText("Status: Online");
-
-                UserIDField.setText("");
-                EmailField.setText("");
-                PasswordFeild.setText("");
-                CurrentPanelText.setText("Home");
-                MainTabPanel.setSelectedIndex(0);
-
+                    Clearfields();
+                    CurrentPanelText.setText("Home");
+                    MainTabPanel.setSelectedIndex(0);
+                } catch (Exception e) {
+                    System.out.println("Null Pointer in main menu " + e);
+                }
             } else {
                 JOptionPane.showMessageDialog(this, "Invalid Details");
             }
@@ -2057,6 +2122,7 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_HomeProfileButtonMouseClicked
 
     private void HomeScheduleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeScheduleButtonMouseClicked
+        UpdateViewScheduleTableData();
         CurrentPanelText.setText("Schedule");
         MainTabPanel.setSelectedIndex(4);
     }//GEN-LAST:event_HomeScheduleButtonMouseClicked
@@ -2102,21 +2168,85 @@ public class MainMenu extends javax.swing.JFrame {
         UpdatePersonalTableData();
     }//GEN-LAST:event_UpdateDeleteTableButtonActionPerformed
 
-    public void DeleteRow(){
-        
+    private void CreateUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreateUserButtonActionPerformed
+        if ((((CreateFName.getText().isEmpty()) || (CreateSName.getText().isEmpty()) || (CreateEmail.getText().isEmpty()) || (CreateCompany.getText().isEmpty()) || String.valueOf(CreateSalary.getPassword()).isEmpty()))
+                || String.valueOf(CreatePassword.getPassword()).isEmpty() || String.valueOf(CreateConfirmPassword.getPassword()).isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Fill in all fields");
+        } else {
+            if (String.valueOf(CreatePassword.getPassword()).equals(String.valueOf(CreateConfirmPassword.getPassword()))) {
+
+                UsersHandling.AddUser(CreateFName.getText(), CreateSName.getText(), CreateEmail.getText(), String.valueOf(CreateSalary.getPassword()), CreateCompany.getText(), CreateDept.getSelectedIndex(), String.valueOf(CreatePassword.getPassword()));
+                UsersHandling.UpdateUsers();
+
+                UsersHandling.setCurrentUser(UsersHandling.ReturnUser(UsersHandling.returnId()));
+                UsersHandling.SaveUserAccessLevel();
+                CurrentUserText.setText("User: " + UsersHandling.getCurrentUser().getFirstName() + " " + UsersHandling.getCurrentUser().getSurname());
+                StatusText.setText("Status: Online");
+
+                Clearfields();
+                CurrentPanelText.setText("Home");
+                MainTabPanel.setSelectedIndex(0);
+
+            } else {
+                JOptionPane.showMessageDialog(this, "Invalid Details");
+            }
+        }
+    }//GEN-LAST:event_CreateUserButtonActionPerformed
+
+    private void Clearfields() {
+        UserIDField.setText("");
+        EmailField.setText("");
+        PasswordFeild.setText("");
+        GuestFName.setText("");
+        GuestSName.setText("");
+        GuestEmail.setText("");
+        CreateFName.setText("");
+        CreateSName.setText("");
+        CreateEmail.setText("");
+        CreateCompany.setText("");
+        CreateDept.setSelectedIndex(0);
+        CreateSalary.setText("");
+        CreatePassword.setText("");
+        CreateConfirmPassword.setText("");
+    }
+
+    private void StartTimeBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartTimeBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_StartTimeBoxActionPerformed
+
+    private void ContinueAsGuestButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ContinueAsGuestButtonActionPerformed
+        if ((GuestFName.getText().isEmpty()) || (GuestSName.getText().isEmpty()) || (GuestEmail.getText().isEmpty())) {
+            JOptionPane.showMessageDialog(this, "Fill in all fields");
+        } else {
+            UsersHandling.AddUser(GuestFName.getText(), GuestSName.getText(), GuestEmail.getText(), "None", "None", 6, "None");
+            UsersHandling.UpdateUsers();
+
+            UsersHandling.setCurrentUser(UsersHandling.ReturnUser(UsersHandling.returnId()));
+            UsersHandling.SaveUserAccessLevel();
+            CurrentUserText.setText("User: " + UsersHandling.getCurrentUser().getFirstName() + " " + UsersHandling.getCurrentUser().getSurname());
+            StatusText.setText("Status: Online");
+
+            Clearfields();
+            CurrentPanelText.setText("Home");
+            MainTabPanel.setSelectedIndex(0);
+        }
+    }//GEN-LAST:event_ContinueAsGuestButtonActionPerformed
+
+    public void DeleteRow() {
+
         try {
-            
+
             int SelectedID = (int) DeleteBookingTable.getValueAt(DeleteBookingTable.getSelectedRow(), 0);
-            
+
             System.out.println(SelectedID);
-            DataBaseHandler.excecuteUpdateQuery("DELETE FROM app.BOOKINGS WHERE BOOKINGID = "+SelectedID);
-            
+            DataBaseHandler.excecuteUpdateQuery("DELETE FROM app.BOOKINGS WHERE BOOKINGID = " + SelectedID);
+
         } catch (Exception e) {
             System.out.println("Error: " + e);
         }
-        
+
     }
-    
+
     public void UpdateCreateTableData() {
         try {
 
@@ -2152,10 +2282,10 @@ public class MainMenu extends javax.swing.JFrame {
         try {
 
             ResultSet rs;
-            
+
             if (UsersHandling.getCurrentAccessLevel() == 3) {
                 rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.BOOKINGS");
-            }else{
+            } else {
                 rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.BOOKINGS WHERE USERID = " + UsersHandling.getCurrentUser().getUserId());
             }
             rs.last();
@@ -2167,7 +2297,7 @@ public class MainMenu extends javax.swing.JFrame {
             columns[1] = rs.getMetaData().getColumnLabel(2);
             columns[2] = rs.getMetaData().getColumnLabel(3);
             columns[3] = rs.getMetaData().getColumnLabel(4);
-            columns[4] = rs.getMetaData().getColumnLabel(5);   
+            columns[4] = rs.getMetaData().getColumnLabel(5);
 
             rs.first();
             Object[][] rows = new Object[TotalRows][columns.length];
@@ -2178,9 +2308,53 @@ public class MainMenu extends javax.swing.JFrame {
                 }
                 rs.next();
             }
-            
-        
+
             DeleteBookingTable.setModel(new javax.swing.table.DefaultTableModel(rows, columns));
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+
+    public void UpdateViewScheduleTableData() {
+        try {
+
+            ResultSet rs;
+
+            if (UsersHandling.getCurrentAccessLevel() == 3) {
+                rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.BOOKINGS");
+            } else if (UsersHandling.getCurrentAccessLevel() == 2) {
+                rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.BOOKINGS WHERE USERID = " + UsersHandling.getCurrentUser().getUserId());
+            } else if ((UsersHandling.getCurrentAccessLevel() == 1) && (UsersHandling.getCurrentUser().getDepartment() == 3)) {
+                rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.Cleaning");
+            } else {
+                rs = DataBaseHandler.excecuteQuery("SELECT * FROM app.Cleaning");
+            }
+            rs.last();
+            int TotalRows = rs.getRow();
+
+            String[] columns = new String[rs.getMetaData().getColumnCount() - 1];
+
+            if (UsersHandling.getCurrentAccessLevel() > 1) {
+                columns[3] = rs.getMetaData().getColumnLabel(4);
+                columns[4] = rs.getMetaData().getColumnLabel(5);
+            }
+
+            columns[0] = rs.getMetaData().getColumnLabel(1);
+            columns[1] = rs.getMetaData().getColumnLabel(2);
+            columns[2] = rs.getMetaData().getColumnLabel(3);
+
+            rs.first();
+            Object[][] rows = new Object[TotalRows][columns.length];
+
+            for (int i = 0; i < TotalRows; i++) {
+                for (int j = 0; j < columns.length; j++) {
+                    rows[i][j] = rs.getObject(columns[j]);
+                }
+                rs.next();
+            }
+
+            ViewBookings.setModel(new javax.swing.table.DefaultTableModel(rows, columns));
 
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -2257,7 +2431,17 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JPanel CateringButton;
     private javax.swing.JLabel CateringLabel;
     private javax.swing.JPanel CateringPanel;
+    private javax.swing.JButton ContinueAsGuestButton;
     private javax.swing.JPanel CreateBookingButton;
+    private javax.swing.JTextField CreateCompany;
+    private javax.swing.JPasswordField CreateConfirmPassword;
+    private javax.swing.JComboBox<String> CreateDept;
+    private javax.swing.JTextField CreateEmail;
+    private javax.swing.JTextField CreateFName;
+    private javax.swing.JPasswordField CreatePassword;
+    private javax.swing.JTextField CreateSName;
+    private javax.swing.JPasswordField CreateSalary;
+    private javax.swing.JButton CreateUserButton;
     private javax.swing.JPanel CurrentPanelStrip;
     private javax.swing.JLabel CurrentPanelText;
     private javax.swing.JLabel CurrentUserText;
@@ -2272,6 +2456,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> EndTimeBox;
     private javax.swing.JLabel ExitButton;
     private javax.swing.JPanel ExitPanel;
+    private javax.swing.JTextField GuestEmail;
+    private javax.swing.JTextField GuestFName;
+    private javax.swing.JTextField GuestSName;
     private javax.swing.JPanel HomeBookingButton;
     private javax.swing.JPanel HomeButton;
     private javax.swing.JPanel HomeCateringButton;
@@ -2335,10 +2522,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField UserIDField;
     private javax.swing.JPanel VerticalMenubarPanel;
     private javax.swing.JPanel ViewBookingButton;
+    private javax.swing.JTable ViewBookings;
     private javax.swing.JLabel WheelChairAccessText;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -2348,18 +2533,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JPasswordField jPasswordField3;
-    private javax.swing.JPasswordField jPasswordField4;
-    private javax.swing.JPasswordField jPasswordField5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField17;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

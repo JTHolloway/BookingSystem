@@ -19,28 +19,27 @@ import java.util.ArrayList;
  */
 public class UsersHandling {
 
-    private Connection con;
-    private Statement stmt;
-    private String sql;
-    private ResultSet rs;
     private static ArrayList<User> Users = new ArrayList<User>();
     private static User CurrentUser;
     private static int CurrentAccessLevel;
 
-    public static void AddUser() {
+    public static void AddUser(String FName, String SName, String Email, String Salary, String Company, int Department, String Password) {
         try {
 
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/BookingDatabase", "James", "Password");
             Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-            String sql = "SELECT MAX(BookingID) as idNum from app.Bookings";
+            String sql = "SELECT MAX(UserID) as idNum from app.Users";
             ResultSet rs = stmt.executeQuery(sql);
             rs.next();
             int idValue = rs.getInt("idNum") + 1;
             //System.out.println("idValue is: " + idValue);
 
-            sql = "INSERT INTO app.Bookings VALUES (" + idValue + ", '" + Start + "', '" + End + "', '" + date + "', " + user.getUserId() + ", " + Room + ")";
+            sql = "INSERT INTO app.Users VALUES (" + idValue + ", '" + FName + "', '" + SName + "', '" + Email + "', " 
+                    + "0.0" + ", '" + Company + "', " + (Department+1) + ", '" + Encrypt(Password) +"')";
             stmt.executeUpdate(sql);
+            
+            
             rs.close();
             con.close();
             stmt.close();
@@ -51,6 +50,31 @@ public class UsersHandling {
         }
     }
 
+    public static int returnId(){
+        int idValue = 1;
+        try {
+
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/BookingDatabase", "James", "Password");
+            Statement stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+
+            String sql = "SELECT MAX(UserID) as idNum from app.Users";
+            ResultSet rs = stmt.executeQuery(sql);
+            rs.next();
+            idValue = rs.getInt("idNum");
+            System.out.println("idValue is ppo: " + idValue);           
+            
+            rs.close();
+            con.close();
+            stmt.close();
+            
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+        return idValue;
+    }
+    
     public static void CreateUsers() {
         try {
 
@@ -72,6 +96,7 @@ public class UsersHandling {
 
                 User u = new User(UserID, FirstName, Surname, Department, Email, Salary, Company, Password);
                 Users.add(u);
+                
                 //System.out.println(UserID + " " + FirstName + " " + Surname + " " + Department
                 //+ " " + Email + " " + Salary + " " + Company+ " " + Password);
             }
@@ -99,7 +124,7 @@ public class UsersHandling {
             ResultSet rs = stmt.executeQuery(sql);
             rs.first();
 
-            System.out.println(rs.getInt("ACCESSLEVEL"));
+            //System.out.println(rs.getInt("ACCESSLEVEL"));
             CurrentAccessLevel = rs.getInt("ACCESSLEVEL");
 
         } catch (Exception e) {
@@ -120,6 +145,7 @@ public class UsersHandling {
     }
 
     public static User ReturnUser(int UserID) {
+        //System.out.println("UserID: " + UserID);
         for (int i = 0; i < Users.size(); i++) {
             if (Users.get(i).getUserId() == UserID) {
                 return Users.get(i);
@@ -133,14 +159,21 @@ public class UsersHandling {
     }
 
     public static boolean ConfirmUser(int UserID, String Email, String Password) {
+        boolean found = false;
         for (int i = 0; i < Users.size(); i++) {
+            System.out.println(Users.get(i).getUserId() + " ........ " + UserID);
+            System.out.println(Users.get(i).getEmailAddress() + " ........ " + Email);
+            System.out.println(Users.get(i).getPassword() + " ........ " + Encrypt(Password));
             if ((Users.get(i).getUserId() == UserID) && (Users.get(i).getEmailAddress().equalsIgnoreCase(Email)) && (Users.get(i).getPassword().equals(Encrypt(Password)))) {
-                return true;
+                found = true;
+                break;
             } else {
-                return false;
+                found = false;
             }
+            System.out.println(found);
         }
-        return false;
+        System.out.println(found);
+        return found;
     }
 
     public static User getCurrentUser() {
@@ -149,6 +182,7 @@ public class UsersHandling {
 
     public static void setCurrentUser(User CurrentUser) {
         UsersHandling.CurrentUser = CurrentUser;
+        //System.out.println(CurrentUser);
     }
 
     private static String Encrypt(String Password) {
